@@ -8,6 +8,7 @@
 <body>
 <x-dc>
 <helmet>
+  <link rel="icon" type="image/png" href="assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&amp;family=Jost:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
@@ -40,13 +41,8 @@
   </header>
 
   <!-- ============ CONTACT BODY ============ -->
-  
-
-  <!-- ============ FOOTER ============ -->
   <section data-screen-label="Contact Form" style="background: #FFFFFF; padding: 100px 48px; flex: 1;">
     <div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.3fr; gap: 80px; align-items: start;">
-
-      
 
       <div style="display: flex; flex-direction: column; gap: 36px; width: 480px; height: 524px">
         <div style="display: flex; flex-direction: column; gap: 10px;">
@@ -55,7 +51,7 @@
         </div>
         <div style="display: flex; flex-direction: column; gap: 10px;">
           <span style="color: #C5A566; font-size: 13px; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 500;">Email</span>
-          <span style="color: #3D3D3D; font-size: 17px; font-weight: 300;">trevor@evoterra.net</span>
+          <span style="color: #3D3D3D; font-size: 17px; font-weight: 300;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="384c4a5d4e574a785d4e574c5d4a4a5916565d4c">[email&#160;protected]</a></span>
         </div>
         <div style="display: flex; flex-direction: column; gap: 10px;">
           <span style="color: #C5A566; font-size: 13px; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 500;">LinkedIn</span>
@@ -64,19 +60,19 @@
       </div><div style="display: flex; flex-direction: column; gap: 22px; border: 1px solid #E5DCC8; padding: 44px; background: #F7F4EE;">
         <sc-if value="{{ sent }}" hint-placeholder-val="{{ false }}">
           <div style="display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center; padding: 40px 0;">
-            <h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 500; color: #111111;">Thank you</h2>
-            <p style="margin: 0; font-size: 16px; font-weight: 300; color: #3D3D3D;">Your message has been noted. We'll be in touch shortly.</p>
+            <h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 34px; font-weight: 500; color: #111111;">Almost there</h2>
+            <p style="margin: 0; font-size: 16px; font-weight: 300; color: #3D3D3D;">Your email app should have opened with your message ready to go — just press Send. If nothing opened, email us directly at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="fa8e889f8c9588ba9f8c958e9f88889bd4949f8e">[email&#160;protected]</a>.</p>
           </div>
         </sc-if>
         <sc-if value="{{ notSent }}" hint-placeholder-val="{{ true }}">
           <div style="display: flex; flex-direction: column; gap: 22px;">
             <h2 style="margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 30px; font-weight: 500; color: #111111;">Send a Message</h2>
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
-              <input placeholder="Name" style="font-family: 'Jost', sans-serif; font-size: 15px; font-weight: 300; padding: 14px 16px; border: 1px solid #D9CFB8; background: #FFFFFF; color: #1A1A1A; outline: none;" style-focus="border-color: #C5A566;">
-              <input placeholder="Email" type="email" style="font-family: 'Jost', sans-serif; font-size: 15px; font-weight: 300; padding: 14px 16px; border: 1px solid #D9CFB8; background: #FFFFFF; color: #1A1A1A; outline: none;" style-focus="border-color: #C5A566;">
+              <input id="cf-name" placeholder="Name" style="font-family: 'Jost', sans-serif; font-size: 15px; font-weight: 300; padding: 14px 16px; border: 1px solid #D9CFB8; background: #FFFFFF; color: #1A1A1A; outline: none;" style-focus="border-color: #C5A566;">
+              <input id="cf-email" placeholder="Email" type="email" style="font-family: 'Jost', sans-serif; font-size: 15px; font-weight: 300; padding: 14px 16px; border: 1px solid #D9CFB8; background: #FFFFFF; color: #1A1A1A; outline: none;" style-focus="border-color: #C5A566;">
             </div>
-            <input placeholder="Subject" style="font-family: 'Jost', sans-serif; font-size: 15px; font-weight: 300; padding: 14px 16px; border: 1px solid #D9CFB8; background: #FFFFFF; color: #1A1A1A; outline: none;" style-focus="border-color: #C5A566;">
-            <textarea placeholder="Your message" rows="6" style="font-family: 'Jost', sans-serif; font-size: 15px; font-weight: 300; padding: 14px 16px; border: 1px solid #D9CFB8; background: #FFFFFF; color: #1A1A1A; outline: none; resize: vertical;" style-focus="border-color: #C5A566;"></textarea>
+            <input id="cf-subject" placeholder="Subject" style="font-family: 'Jost', sans-serif; font-size: 15px; font-weight: 300; padding: 14px 16px; border: 1px solid #D9CFB8; background: #FFFFFF; color: #1A1A1A; outline: none;" style-focus="border-color: #C5A566;">
+            <textarea id="cf-message" placeholder="Your message" rows="6" style="font-family: 'Jost', sans-serif; font-size: 15px; font-weight: 300; padding: 14px 16px; border: 1px solid #D9CFB8; background: #FFFFFF; color: #1A1A1A; outline: none; resize: vertical;" style-focus="border-color: #C5A566;"></textarea>
             <button onClick="{{ submit }}" style="align-self: flex-start; cursor: pointer; font-family: 'Jost', sans-serif; color: #111111; background: #C5A566; border: none; padding: 14px 38px; font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 500;" style-hover="background: #D8BC80;">Send Message</button>
           </div>
         </sc-if>
@@ -99,7 +95,7 @@
         <div style="display: flex; flex-direction: column; gap: 14px;">
           <span style="color: #C5A566; font-size: 13px; letter-spacing: 0.28em; text-transform: uppercase; font-weight: 500;">Contact</span>
           <span style="color: #EDE6D6; font-size: 15px; font-weight: 300;">(801) 876-5122</span>
-          <span style="color: #EDE6D6; font-size: 15px; font-weight: 300;">trevor@evoterra.net</span>
+          <span style="color: #EDE6D6; font-size: 15px; font-weight: 300;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="582c2a3d2e372a183d2e372c3d2a2a3976363d2c">[email&#160;protected]</a></span>
           <a href="https://www.linkedin.com/company/evoterra-llc/" target="_blank" rel="noopener" style="color: #EDE6D6; text-decoration: none; font-size: 15px; font-weight: 300;" style-hover="color: #C5A566;">LinkedIn</a>
         </div>
       </div>
@@ -112,14 +108,24 @@
 
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
   state = { sent: false };
   renderVals() {
     return {
       sent: this.state.sent,
       notSent: !this.state.sent,
-      submit: () => this.setState({ sent: true }),
+      submit: () => {
+        const val = (id) => (document.getElementById(id) || {}).value || '';
+        const name = val('cf-name');
+        const email = val('cf-email');
+        const subject = val('cf-subject') || 'Website inquiry';
+        const message = val('cf-message');
+        const body = message + '\n\n— ' + (name || 'Anonymous') + (email ? ' (' + email + ')' : '');
+        const url = 'mailto:trevor@evoterra.net?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+        window.location.href = url;
+        this.setState({ sent: true });
+      },
     };
   }
 }
